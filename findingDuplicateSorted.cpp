@@ -29,11 +29,35 @@ int countingDuplicatesSorted(int A[],int length){
     }
 }
 
+int countingDuplicateHash(int A[], int length){
+    int i;
+    int lower = A[0];
+    int higher = A[0];
+    for(i = 0; i<length; i++){
+        if(A[i]<lower){
+            lower = A[i];
+        }
+        if(A[i]>higher){
+            higher = A[i];
+        }
+    }
+    int H[higher] = {0};
+    for(i = 0; i<length;i++){
+        H[A[i]]++;
+    }
+    for(i = 0; i<higher; i++){
+        if(H[i]>1){
+            std::cout<<i<<" "<<H[i]<<std::endl;
+        }
+    }
+}
+
 int main()
 {
     int A[] = {3, 4, 4, 5, 6, 7, 9, 10, 10, 10, 15};
 
     int length = sizeof(A) / sizeof(A[0]);
     // duplicateSorted(A, length);
-    countingDuplicatesSorted(A,length);
+    // countingDuplicatesSorted(A,length);
+    countingDuplicateHash(A,length);
 }
