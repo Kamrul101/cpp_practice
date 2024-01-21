@@ -41,11 +41,35 @@ int countingDuplicateHash(int A[], int length){
             higher = A[i];
         }
     }
-    int H[higher] = {0};
+    int size = higher + 1;
+    int H[size] = {0};
     for(i = 0; i<length;i++){
         H[A[i]]++;
     }
-    for(i = 0; i<higher; i++){
+    for(i = lower; i<size; i++){
+        if(H[i]>1){
+            std::cout<<i<<" "<<H[i]<<std::endl;
+        }
+    }
+}
+int countingDuplicateHashUnsorted(int A[], int length){
+    int i;
+    int lower = A[0];
+    int higher = A[0];
+    for(i = 0; i<length; i++){
+        if(A[i]<lower){
+            lower = A[i];
+        }
+        if(A[i]>higher){
+            higher = A[i];
+        }
+    }
+    int size= higher + 1;
+    int H[size] = {0};
+    for(i = 0; i<length;i++){
+        H[A[i]]++;
+    }
+    for(i = 0; i<size; i++){
         if(H[i]>1){
             std::cout<<i<<" "<<H[i]<<std::endl;
         }
@@ -78,5 +102,6 @@ int main()
     // duplicateSorted(A, length);
     // countingDuplicatesSorted(A,length);
     // countingDuplicateHash(A,length);
-    duplicateUnsorted(B, length2);
+    // duplicateUnsorted(B, length2);
+    countingDuplicateHashUnsorted(B,length2);
 }
