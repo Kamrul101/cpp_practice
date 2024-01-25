@@ -1,18 +1,20 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-int main(){
-    int x,y,z,count = 0;
-        cin>>z;
-    for(int i=1;i<=z ;i++){
-        if(z%i == 0){
-                count++;
-        }
+int n, m, v[1000];
+main()
+{
+    int a[2] = {0}, c, i, j, k;
+    cin >> n;
+    for (i = 0; i < n; i++)
+        cin >> v[i];
+    c = 0;
+    k = n - 1;
+    for (i = 0; i < n; i++)
+    {
+        if (v[c] < v[k])
+            a[i % 2] += v[k--];
+        else
+            a[i % 2] += v[c++];
     }
-    if(count == 3){
-
-    return true;
-    }
-    else return false;
-    
+    cout << a[0] << " " << a[1];
 }
