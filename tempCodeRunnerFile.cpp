@@ -1,20 +1,42 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+
 using namespace std;
-int n, m, v[1000];
-main()
-{
-    int a[2] = {0}, c, i, j, k;
-    cin >> n;
-    for (i = 0; i < n; i++)
-        cin >> v[i];
-    c = 0;
-    k = n - 1;
-    for (i = 0; i < n; i++)
-    {
-        if (v[c] < v[k])
-            a[i % 2] += v[k--];
-        else
-            a[i % 2] += v[c++];
+int main(){
+    int n;
+    int s =0, d =0;
+    int turn = 1;
+    cin>>n;
+    vector <int> v(n);
+    for(int i=0; i<v.size(); i++){
+        cin>>v[i];
     }
-    cout << a[0] << " " << a[1];
+    while(!v.empty()){
+        if(turn == 1 ){
+            if(v[0]<v.back()){
+                s+=v.back();
+                
+                v.pop_back();
+            }
+            else {
+                s+= v[0];
+                v.erase(v.begin());
+
+            }
+            turn++;
+        }
+        else{
+            if(v[0]<v.back()){
+                d+=v.back();
+                
+                v.pop_back();
+            }
+            else {
+                d+= v[0];
+                v.erase(v.begin());
+
+            }
+            turn--;
+        }
+    }
+    cout<<s<<" "<<d<<endl;
 }

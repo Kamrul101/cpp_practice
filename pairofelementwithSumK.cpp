@@ -4,7 +4,7 @@ int pairOfSum(int A[], int length, int k){
     for (int j = i+1; j < length; j++)
     {
         if((A[i]+A[j])==k){
-            std::cout<<A[i]<<" "<<A[j]<<std::endl;
+            std::cout<<i<<" "<<j<<std::endl;
         }
     }
     
@@ -27,7 +27,7 @@ int pairOfSumHash(int A[], int length, int k){
     int H[size] = {0};
     for(i=0;i<length; i++){
         if((H[k-A[i]]) != 0){
-            std::cout<<A[i]<<" "<<k-A[i]<<std::endl;
+            std::cout<<i<<" "<<H[k-A[i]-lower]<<std::endl;
         } 
         H[A[i]]++;
     }
