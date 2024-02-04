@@ -10,6 +10,7 @@ int main(){
     v.push_back("Blaaa");
     // sort(v.begin(),v.end());
     sort(v.rbegin(),v.rend());
+    
     for(auto c: v){
         cout<<c<<endl;
     }
