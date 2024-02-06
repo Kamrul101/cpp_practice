@@ -4,7 +4,7 @@ int pairOfSum(int A[], int length, int k){
     for (int j = i+1; j < length; j++)
     {
         if((A[i]+A[j])==k){
-            std::cout<<i<<" "<<j<<std::endl;
+            std::cout<<i<<" "<<j<<std::endl; //O(n^2)
         }
     }
     
