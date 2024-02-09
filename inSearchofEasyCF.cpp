@@ -6,7 +6,6 @@ int main(){
     optimize();
     int n,a,s=0;
     cin>>n;
-    bool con = false;
     vector <int> v;
     for(int i=0; i<n;i++){
         cin>>a;
@@ -20,7 +19,5 @@ int main(){
     }
     else {
         cout<<"EASY\n";
-    }
-
-    
+    } 
 }
