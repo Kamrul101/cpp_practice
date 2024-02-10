@@ -4,13 +4,12 @@ using namespace std;
 
 int main(){
     optimize();
-    long long n,k;
-    cin>>n>>k;
-    n = (n+1)/2;
-    if(k>=n){
-        cout<<(k-n)*2<<"\n";
+    string a,b,c;
+    cin>>a>>b;
+    int i,j;
+    for(i=0,j=0; a[i]!='\0'&& b[j]!='\0'; i++,j++ ){
+        cout<<(a[i]^b[j]);
     }
-    else{
-        cout<<2*k - 1<<'\n';
-    } 
+    cout<<c<<endl;
+    
 }

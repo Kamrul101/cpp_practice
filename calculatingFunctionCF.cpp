@@ -4,13 +4,14 @@ using namespace std;
 
 int main(){
     optimize();
-    long long n,k;
-    cin>>n>>k;
-    n = (n+1)/2;
-    if(k>=n){
-        cout<<(k-n)*2<<"\n";
+    long long t;
+    cin>>t;
+    if(t%2==0){
+        cout<<t/2<<'\n';
     }
     else{
-        cout<<2*k - 1<<'\n';
-    } 
+        cout<<( t/2 - t)<<'\n';
+    }
+    
+    
 }
