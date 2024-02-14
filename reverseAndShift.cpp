@@ -59,8 +59,8 @@ int main()
     int A[] = {2, 4, 6, 8, 10, 12, 15, 24, 29, 31, 42};
     int length = sizeof(A) / sizeof(A[0]);
     int n;
-    reverse(A, length);
-    reverse2(A, length);
+    // reverse(A, length);
+    // reverse2(A, length);
     std::cout << "For how many elements you want to rotate: ";
     std::cin >> n;
     std::cout << std::endl;
