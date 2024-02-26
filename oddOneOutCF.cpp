@@ -4,10 +4,12 @@ using namespace std;
 
 int main(){
     optimize();
-    int a,b,c;
-    cin>>a>>b>>c;
-    // int _or = a|b;
-    int _and = a&b&c;
-    int x_or = a^b;
-    cout<< x_or<<endl;
+    int t;
+    cin>>t;
+    while(t--){
+        int a,b,c;
+        cin>>a>>b>>c;
+        int odd = a^b^c;
+        cout<<odd<<"\n";
+    }
 }
