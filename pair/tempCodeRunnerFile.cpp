@@ -6,27 +6,33 @@ using namespace std;
 int main() {
     optimize();
     int t;
-    cin >> t;
-    
-    vector<int> v(200010);
-        int totalSum = 0;
-        for (int i = 1; i <= 200010; i++) {
-        int sum = 0;
-            int num = i;
-            while (num > 0) {
-                sum += num % 10;
-                num /= 10;
-            }
-            
-           v[i] = v[i-1]+sum;
-            
-        }
+    cin>>t;
     while (t--) {
-        
-        int n;
+        int n, sum = 0;
         cin >> n;
-        
-        cout << v[n] << '\n';
+        int a[n];
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+            sum += a[i];
+        }
+        if (sum % 3 == 0) {
+            cout << '0' << endl;
+        } else if (sum % 3 == 2) {
+            cout << '1' << endl;
+        } else {
+            bool found = false;
+            for (int i = n; i>0; i--) {
+                int temp = sum - a[i];
+                if (temp % 3 == 1) {
+                    cout << '1' << endl;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                cout << '2' << endl;
+            }
+        }
     }
-    return 0;
+    
 }
