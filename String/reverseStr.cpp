@@ -17,13 +17,16 @@ using namespace std;
 
 // using swap
 int main(){
-    string str = "hello";
+    int m,n;
+    cin>>m>>n;
+    string str;
+    cin>>str;
     int txtLength  = str.length();
     int i, j, temp;
-    for(i = 0, j = txtLength -1; i<j; i++, j--){
+    for(i = m-1, j = n-1; i<j; i++, j--){
         temp = str[i];
         str[i]=str[j];
         str[j]= temp;
     }
-    cout<<str;
+    cout<<str<<"\n";
 }
