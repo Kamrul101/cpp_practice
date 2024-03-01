@@ -7,18 +7,13 @@ int main() {
     optimize();
     int a,b,c;
     cin>>a>>b>>c;
-    int s1,s2,s3,s4;
+    int s1,s2,s3,s4,s5;
     s1 = a + b*c;
     s2 = a* (b+c);
     s3 = a * b * c;
     s4 = (a+b) * c;
-    if(s1>s2 && s1>s2 && s1 > s3 && s1> s4 ){
-        cout<<s1<<endl;
-    }
-    else if(s2>s3 && s2>s4){
-        cout<<s2<<endl;
-    }
-    else if(s3>s4) cout<<s3<<endl;
-    else cout<<s4<<endl;
+    s5 = a + b + c;
+    int s = max(max(s2,s3),max(s4,s5));
+    cout<<max(s,s1)<<"\n";
  
 }
