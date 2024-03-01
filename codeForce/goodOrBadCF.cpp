@@ -9,8 +9,8 @@ int main() {
     int t;
     cin>>t;
     while(t--){
-        string s;
-     cin>>s;
+    string s;
+    cin>>s;
     bool found = false;
     for(int i=2;i<s.size();i++){
         char s1 = s[i-2];
@@ -24,7 +24,6 @@ int main() {
         else if(s1 == '1' && s2=='0' && s3=='1'){
             found = true;
             break;
-        
         }
         else found = false;
         
