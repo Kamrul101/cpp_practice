@@ -8,23 +8,21 @@ using namespace std;
 int main() {
     optimize();
     
-    map<int,int>val;
-    val['I'] = 1;
-    val['V'] = 5;
-    val['X'] = 10;
-    val['L'] = 50;
-    val['C'] = 100;
-    val['D'] = 500;
-    val['M'] = 1000;
     string s;
     cin>>s;
-    int sum=0;
+    string temp;
     for(int i=0;i<s.size();i++){
-        if(val[s[i]]>=val[s[i+1]]){
-            sum+=val[s[i]];
+        if(s[i]=='.'){
+            temp+='0';
         }
-        else sum-=val[s[i]];
+        if(s[i]=='-' && s[i+1]=='.'){
+            temp+='1';
+            i++;
+        }
+        if(s[i]=='-' && s[i+1]=='-') {
+            temp+='2';
+            i++;
+        }
     }
-    cout<<sum<<endl;
-    
+    cout<<temp<<endl;
 }
