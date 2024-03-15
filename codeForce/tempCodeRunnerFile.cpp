@@ -1,3 +1,3 @@
-f(!isPrime(m)){
-    //     cout<<"NO"<<endl;
+(s==temp) {
+    //     cout<<"-1"<<endl;
     // }
