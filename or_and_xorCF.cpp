@@ -5,9 +5,9 @@ using namespace std;
 int main(){
     optimize();
     int a,b,c;
-    cin>>a>>b>>c;
+    // cin>>a>>b>>c;
     // int _or = a|b;
     int _and = a&b&c;
-    int x_or = a^b;
+    int x_or =6^4;
     cout<< x_or<<endl;
 }
