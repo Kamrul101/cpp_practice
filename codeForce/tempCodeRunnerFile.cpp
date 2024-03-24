@@ -1,13 +1,12 @@
-#include<bits/stdc++.h>
-using namespace std;
-#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-#define endl "\n"
-// const int mx = 2e6+123;
-// long long a[mx];
-
-int main() {
-    optimize();
-   string s="21";
-   cout<<s.size();
-    
-}
+int a,b;
+        int rem;
+    cin>>a>>b;
+    if(a>b ){
+        rem = a/b;
+        cout<<rem+1<<endl;
+    }
+    else if(b>a){
+        rem = b/a;
+        cout<<rem+1<<endl;
+    }
+    else cout<<0<<endl;
