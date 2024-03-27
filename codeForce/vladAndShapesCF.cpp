@@ -11,21 +11,14 @@ int main() {
     int t;
     cin>>t;
     while(t--){
-        int n;
-        cin>>n;
-        bool f = false;
-        for(int i=0;i<n;i++){
-           string s;
-           cin>>s;
-           int sum=0;
-           for(auto u:s){
-            sum+=u-'0';
-           }
-           if(sum==1) f=true;
+        vector<int> v;
+        for(int i=0;i<3;i++){
+            int a;
+            cin>>a;
+        v.push_back(a);
         }
-        if(f) cout<<"TRIANGLE"<<endl;
-        else cout<<"SQUARE"<<endl;
-        
+        sort(v.begin(),v.end());
+        cout<<v[1]<<endl;
            
     }
     
