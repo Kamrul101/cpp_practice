@@ -14,8 +14,12 @@ int main() {
     while(t--){
         int a,b;
         cin>>a>>b;
-        m+=a;
-        c+=b;
+        if(a>b) m++;
+        else if(a<b) c++;
+        else {
+            m+=0;
+            c+=0;
+        }
     }
     if(m>c) cout<<"Mishka"<<endl;
      else if(m<c) cout<<"Chris"<<endl;
