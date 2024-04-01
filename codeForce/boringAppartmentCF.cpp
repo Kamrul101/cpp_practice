@@ -20,7 +20,7 @@ int main() {
     int t;
     cin>>t;
     while(t--){
-        string s;
+        string s;   
         cin>>s;
         int sum=0;
         for(auto u:v){
