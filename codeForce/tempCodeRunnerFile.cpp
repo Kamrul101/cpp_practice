@@ -1,42 +1,15 @@
-#include<bits/stdc++.h>
-using namespace std;
-#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-#define endl "\n"
-// const int mx = 2e5+123;
-// int a[mx];
-
-
-int main() {
-    optimize();
-    int t;
-    cin>>t;
-    while(t--){
-        vector<int> v;
-        int n;
-        cin>>n;
-        for(int i=0;i<n;i++){
-            int a;
-            cin>>a;
-            v.push_back(a);
+if(a%2!=0 && b%2==0) {
+        newB = b/2;
+        newA=a;
         }
-        sort(v.begin(),v.end());
-        int mid;
-        int temp= n;
-        if(n%2!=0){
-
-                mid = temp/2;
+       else if(a%2==0 && b%2!=0) {
+        newA= a/2;
+        newB = b;
         }
-        else  mid = (temp/2)-1;
-        v[mid]++;
-        int count=1;
-        for(int i=mid;i<n-1;i++){
-            if(v[i]>v[i+1]){
-                v[i+1]++;
-                count++;
-            }
-            
-        }
-        cout<<count<<endl;
-    }
-
-}
+       else {
+        newA = a/2;
+        newB = b;
+       }
+       if(newB*2 >b ) cout<<"YES"<<endl;
+       else if(newA*2 > a ) cout<<"YES"<<endl;
+       else cout<<"NO"<<endl;
