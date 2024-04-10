@@ -12,21 +12,16 @@ int main() {
     int t;
     cin>>t;
     while(t--){
-     int n;
+     int n,plus=0,minus=0;
      cin>>n;
-     vector<int> v;
-        int a,x,l=1,r=INT_MAX;
+     string s;
+     cin>>s;
      for(int i=0;i<n;i++){
-        cin>>a>>x;
-        if(a==1) l= max(l,x);
-        if(a==2) r=min(r,x);
-        if(a==3) v.push_back(x);
+        if(s[i]=='+')plus++;
+        else minus++;
      }
-     int c=0;
-     for(auto u:v){
-        if(u>=l && u<=r ) c++;
-     }
-     cout<<max(r-l-c+1,0)<<endl;
+     int ans = (plus>minus)?plus-minus: minus-plus;
+     cout<<ans<<endl;
     }
 
 }
