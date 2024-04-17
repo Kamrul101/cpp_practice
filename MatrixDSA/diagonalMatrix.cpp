@@ -10,7 +10,7 @@ int main() {
     int n;
     cin>>n;
     int matrix[n],b[n][n];
-    /*this code is for for array to make
+    /*this code is for array to make
     diagonal matrix
     for(int i=0;i<n;i++){
         cin>>matrix[i];
