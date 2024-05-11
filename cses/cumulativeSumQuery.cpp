@@ -18,7 +18,7 @@ int main() {
     }
     preSum[0] += a[0];
     for(int i=1;i<n;i++){
-        preSum[i] += preSum[i-1]+a[i];
+        preSum[i] = preSum[i-1]+a[i];
     }
     cin>>t;
     while(t--){

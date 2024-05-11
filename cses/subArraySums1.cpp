@@ -17,7 +17,7 @@ int main() {
         cin>>a[i];
     }
     for(int i=1;i<=n;i++){
-        preSum[i] += preSum[i-1]+a[i];
+        preSum[i] = preSum[i-1]+a[i];
     }
     map<ll,int> cnt;
     cnt[0]=1;
