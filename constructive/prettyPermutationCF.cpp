@@ -14,10 +14,20 @@ int main() {
     while(t--){
         int n;
         cin>>n;
-        for(int i=1;i<=n;i++){
+        if(n%2==0){
+            for(int i=1;i<n;i++){
             cout<<i+1<<" "<<i<<" ";
             i++;
         }
+        }
+        else{
+            cout<<3<<" "<<1<<" "<<2<<" ";
+            for(int i=4;i<n;i++){
+            cout<<i+1<<" "<<i<<" ";
+            i++;
+        }
+        }
+        
         
         cout<<endl;
 
