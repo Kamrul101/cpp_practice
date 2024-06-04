@@ -10,8 +10,8 @@ typedef long double  ld ;
 
 ld power(ld m, int n){
         double res;
-        long long exp = static_cast<long long>(n); // Use static_cast to convert n to long long
-    long long t = exp;
+        long long exp = static_cast<long long>(n);
+        long long t = exp;
         if(exp<0) {
             exp*=-1;
 
@@ -24,9 +24,6 @@ ld power(ld m, int n){
         if(t<0) res = 1/ res;
         
     return res;
-   
-    
-    
 }
 
 
