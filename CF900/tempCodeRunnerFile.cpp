@@ -9,21 +9,10 @@ ll a[mx];
 
 int main() {
     optimize();
-    ll n,b,d;
-    cin>>n>>b>>d;
-    int sum=0,cnt=0;
-    for(int i=0;i<n;i++){
-        cin>>a[i];
-        if(a[i]<=d) {
-            sum+=a[i];
-            if(sum>d){
-            sum=0;
-            cnt++;
-        }
-        }
-        
-    }
-    cout<<cnt<<endl;
+    int a = 9, b=3;
+    cout<<__gcd(97,1)<<endl;
+    cout<<(1*1)/__gcd(1,1)<<endl;
+
         
     
 }
