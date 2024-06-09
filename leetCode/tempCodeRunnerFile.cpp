@@ -1,7 +1,21 @@
- // for(int i=0;i<1000;i++){
-        //     if(a[i]>max) max = a[i];
-        // }
-        // for(int i=0;i<1000;i++){
-        //     if(max == a[i]) count+=a[i];
-        // }
-        // cout<<count<<endl;
+#include <stdio.h>
+int main(){
+int T;
+scanf("%d", &T);
+while(T--){
+    long int N, fact = 1;
+    scanf("%d", &N);
+    if(N==0){
+        printf("1\n");
+    }
+    else{
+    for(int i = 1; i <= N; i++){
+
+        fact = fact * i;
+
+        }
+        printf("%d\n", fact);
+    }
+}
+    return 0;
+}

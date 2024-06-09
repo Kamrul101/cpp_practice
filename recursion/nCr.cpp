@@ -29,7 +29,7 @@ int main() {
     while(t--){
         ll n,r;
         cin>>n>>r;
-        cout<<nCrIt(n,r)<<endl;
+        cout<<nCr(n,r)<<endl;
     }
     
     

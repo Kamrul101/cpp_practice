@@ -5,7 +5,9 @@ using namespace std;
 int main(){
     optimize();
     string s;
+    
     vector<string> v;
+    
     getline(cin,s);
     for(auto u: s){
         if(u>=97 && u<=122){
