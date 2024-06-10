@@ -12,7 +12,7 @@ int merging(int A[], int B[], int length1, int length2){
     int C[length3];
 
     while(i< length1 && j< length2){
-        if(A[i]<B[j]){
+        if(A[i]<=B[j]){
             C[k] = A[i];
             i++;
             k++;
@@ -49,8 +49,8 @@ int merging(int A[], int B[], int length1, int length2){
 
 
 int main(){
-    int A[] = {4,8,12,15,18};
-    int B[] = {6,10,11,13,17,19};
+    int A[] = {};
+    int B[] = {2,3};
     int length1 =  sizeof(A)/sizeof(A[0]);
     int length2 =  sizeof(B)/sizeof(B[0]);
     merging(A,B,length1,length2);
