@@ -7,7 +7,7 @@ typedef long double ld;
 #define MOD 1000000007
 const int mx = 5e5 + 123;
 
-int merging(int A[] ,int l, int mid, int h)
+void merging(int A[] ,int l, int mid, int h)
 {
     int i = l, j = mid+1, k = l;
     int len = h+1;
