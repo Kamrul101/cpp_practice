@@ -48,6 +48,18 @@ int UnionUnsortedArray(int A[],int B[], int len1, int len2){
     display(C,k);
 }
 
+int IntersectionUnsortedUnique(int A[],int B[], int len1, int len2){
+    int i= 0, j= 0,k=0;
+    int C[len1 + len2];
+    for(i=0;i<len1;i++){
+        for(int j=0;j<len2;j++){
+            if(A[i]==B[j]){
+                C[k++] = A[i];   
+            }
+        }
+    }
+    display(C,k);
+}
 int InterSectionSorted(int A[],int B[], int len1, int len2){
     int i= 0, j= 0,k=0;
     int C[len1 + len2];
@@ -76,5 +88,5 @@ int main(){
     int length2 =  sizeof(B)/sizeof(B[0]);
     // UnionSortedArray(A,B,length1,length2);
     // UnionUnsortedArray(A,B,length1,length2);
-    InterSectionSorted(A,B,length1,length2);
+    IntersectionUnsortedUnique(A,B,length1,length2);
 }
