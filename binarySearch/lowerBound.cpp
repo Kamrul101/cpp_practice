@@ -27,7 +27,7 @@ int binarySearchLowerBound(int A[], int length, int key){
     return lo;
 }
  int main(){
-    optimize();
+    // optimize();
     int A[] ={2,4,6,10,10,10,15,24,29,31,42};
     int length = sizeof(A)/sizeof(A[0]);
     int k;

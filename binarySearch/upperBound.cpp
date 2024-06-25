@@ -17,7 +17,6 @@ int binarySearchUpperBound(int A[], int length, int key){
             up = mid;
             high = mid -1;
         }
-        
         else {
             low = mid +1;
         }
