@@ -3,6 +3,7 @@ using namespace std;
 #define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 #define endl "\n"
 typedef long long ll ;
+
 // const int mx = 2e5+123;
 // long long a[mx];
 
@@ -16,6 +17,7 @@ int main() {
         string s;
         cin>>s;
         map<char, int> m;
+        
         for(auto u:s){
             m[u]++;
         }
