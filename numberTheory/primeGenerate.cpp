@@ -8,7 +8,7 @@ typedef long double ld;
 #define MOD 1000000007
 #define mem(a,b) memset(a, b, sizeof(a) )
 
-const int mx = 1e6;
+const int mx = 1e8;
 
 bitset<mx> isPrime;
 vector<int> primes;
@@ -30,8 +30,9 @@ void primeGen(int n){
     }
 }
 int main() {
-    primeGen(20);
-    for(auto u:primes){
-        cout<<u<<" ";
+    int n=1e8-1;
+    primeGen(n);
+    for ( int i = 0; i < primes.size(); i += 100 ) {
+        cout << primes[i] << endl;
     }
 }
