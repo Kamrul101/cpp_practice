@@ -13,7 +13,7 @@ int main() {
     optimize();
     int n=10;
     for(int i=1;i<=n;i++){
-        for(int j =i;j<=n;j+=i){
+        for(int j=i;j<=n;j+=i){
             cnt[j]++;
             v[j].push_back(i); // store divisors
         }
