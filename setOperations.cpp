@@ -54,7 +54,7 @@ int IntersectionUnsortedUnique(int A[],int B[], int len1, int len2){
     for(i=0;i<len1;i++){
         for(int j=0;j<len2;j++){
             if(A[i]==B[j]){
-                C[k++] = A[i];   
+                C[k++] = A[i++];   
             }
         }
     }
@@ -83,10 +83,11 @@ int InterSectionSorted(int A[],int B[], int len1, int len2){
 
 int main(){
     int A[] = {2,4,12,15,19};
-    int B[] = {4,11,12,15,17,19};
+    int B[] = {4,12,12,15,17,19};
     int length1 =  sizeof(A)/sizeof(A[0]);
     int length2 =  sizeof(B)/sizeof(B[0]);
     // UnionSortedArray(A,B,length1,length2);
     // UnionUnsortedArray(A,B,length1,length2);
-    IntersectionUnsortedUnique(A,B,length1,length2);
+    // IntersectionUnsortedUnique(A,B,length1,length2);
+    InterSectionSorted(A,B,length1,length2);
 }
