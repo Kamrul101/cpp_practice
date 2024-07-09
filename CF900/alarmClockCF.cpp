@@ -33,7 +33,7 @@ int main() {
                 time+=timeFall;
                 cnt++;
             }
-            // ll cnt = ceil((double(a-b)/(c-d)));
+            // ll cnt = ceil((double(a-b)/(c-d))); //main answer
             cout<< b+cnt*c<<endl;
             
         }
