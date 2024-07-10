@@ -2,27 +2,31 @@
 using namespace std;
 typedef long long ll;
 typedef long double ld;
+
 #define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 #define endl "\n"
 #define MOD 1000000007
-const int mx = 2e5 + 123;
-ll a[mx];
+#define mem(a,b) memset(a, b, sizeof(a) )
+
+const int mx = 1e7+123;
 
 
-int main()
-{
+int main() {
     optimize();
+    
     int t;
     cin>>t;
     while(t--){
-        ll c,b,n;
-        cin>>c>>b>>n;
-        ll t = b;
-        for(int i=0;i<n;i++) {
-            cin>>a[i];
-            t+=min(a[i],c-1);
+        string s;
+        cin>>s;
+        if(s[0]==s[s.size()-1]) cout<<s<<endl;
+        else{
+            s[s.size()-1] = s[0];
+            cout<<s<<endl;
         }
-        cout<<t<<endl;
-
+        
     }
+    
+   
+    
 }
