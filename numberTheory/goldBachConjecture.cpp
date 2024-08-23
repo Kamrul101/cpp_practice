@@ -22,8 +22,8 @@ void primeGen(int n){
             }
         }
     }
-    isPrime[2]=1;
-    primes.push_back(2);
+    // isPrime[2]=1;
+    // primes.push_back(2);
     for(int i=3;i<=n;i+=2){
         if(isPrime[i]==1) {
             primes.push_back(i);
