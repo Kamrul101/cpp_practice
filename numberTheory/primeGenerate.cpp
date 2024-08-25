@@ -12,7 +12,7 @@ const int mx = 1e8;
 
 bitset<mx> isPrime;
 vector<int> primes;
-void primeGen(int n){
+void sieve(int n){
     for(int i = 3;i<=n;i+=2) isPrime[i] = 1;
     int sq = sqrt(n);
     for(int i=3;i<=sq;i+=2){
@@ -33,7 +33,7 @@ void primeGen(int n){
 }
 int main() {
     int n=1e8-1;
-    primeGen(n);
+    sieve(n);
     for ( int i = 0; i < primes.size(); i += 100 ) {
         cout << primes[i] << endl;
     }

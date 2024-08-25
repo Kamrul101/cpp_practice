@@ -16,7 +16,7 @@ int cntPrime[mx];
 
 
 
-void primeGen(int n){
+void sieve(int n){
     for(int i = 3;i<=n;i+=2) isPrime[i] = 1;
     int sq = sqrt(n);
     for(int i=3;i<=sq;i+=2){
@@ -38,7 +38,7 @@ void primeGen(int n){
 int main() {
     optimize();
     int lim=1e7;
-    primeGen(lim);
+    sieve(lim);
     
     
     int limX= 3200;
