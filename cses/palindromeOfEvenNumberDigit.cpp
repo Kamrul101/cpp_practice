@@ -11,7 +11,7 @@ typedef long double ld;
 // int a[mx];
 int main() {
     optimize();
-    int lim = 1e6;
+    int lim = 1e5;
     vector<pair<int,string>> v;
     string s,t;
     int cnt=0;
