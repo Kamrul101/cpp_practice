@@ -2,6 +2,8 @@
 using namespace std;
 #define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
+
+
 int main(){
     optimize();
     vector<int> v;
@@ -13,6 +15,7 @@ int main(){
     int t= v.size();
     sort(v.begin(),v.end());
     int sz = unique(v.begin(),v.end())-v.begin();
+    
     cout<<t-sz<<endl;
 
     
