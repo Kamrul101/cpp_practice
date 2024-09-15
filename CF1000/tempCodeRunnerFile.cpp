@@ -1,1 +1,1 @@
-s.size()
+cout<<cntA<<" "<<cntB<<endl;
