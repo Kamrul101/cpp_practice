@@ -8,8 +8,8 @@ typedef long double ld;
 #define MOD 1000000007
 #define mem(a,b) memset(a, b, sizeof(a) )
 const int mx =2e5+123;
-ll a[mx];
-int c[mx]={0};
+int a[mx];
+
 int main() {
     optimize();
     int t;
@@ -17,29 +17,27 @@ int main() {
     while(t--){
         int n,k;
         cin>>n>>k;
-        ll mx = -1;
+        vector<ll> v(n);
+        map<ll,ll>mp1,mp2;
         for(int i=0;i<n;i++){
-            ll x;
-            cin>>x;
-            a[i] = x;
-            c[x]++;
-            if(x>mx){
-                mx = x;
-            }
+            cin>>v[i];
+            mp1[v[i]]++;
         }
-        ll mex = 0;
-        for(int i=0;i<=mx;i++){
-            if(a[i]<1){
-                mex = a[i];
-                break;
+        ll cnt=0;
+        while(1){
+            if(mp1[cnt]>0){
+                mp1[cnt]--;
+                ll f = mp1[cnt];
+                mp2[cnt%k]+=f;
+                cnt++;
             }
-        }
-        if(mex==0) cout<<0<<endl;
-        else{
-            for(int i=0;i<n;i++){
-                
+            else if(mp2[cnt%k]>0){
+                mp2[cnt%k]--;
+                cnt++;
             }
+            else break;
         }
+        cout<<cnt<<endl;
         
     }
     
