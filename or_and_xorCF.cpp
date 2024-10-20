@@ -9,5 +9,7 @@ int main(){
     // // int _or = a|b;
     // int _and = a&b&c;
     int x_or =2|3;
+    bool a = 00&0|1|1&000;
+    cout<<a<<endl;
     cout<< x_or<<endl;
 }
