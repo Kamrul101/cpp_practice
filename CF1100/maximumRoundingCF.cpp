@@ -16,7 +16,7 @@ int main() {
     while(t--){
         string s;
         cin>>s;
-        int pos;
+        int pos=s.size();
         for(int i = s.size()-1;i>=0;i--){
             if(s[i]-'0'>=5){
                 if(i==0){
