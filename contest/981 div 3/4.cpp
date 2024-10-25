@@ -4,7 +4,7 @@ typedef long long ll ;
 #define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 #define endl "\n"
 const int mx = 2e5+123;
-int a[mx];
+ll a[mx];
 // ll preSum[mx];
 
 
@@ -19,24 +19,22 @@ int main() {
         for(int i=0;i<n;i++){
             cin>>a[i];
         }
-        int preSum = 0;
-        int mx = 0;
-        int last = -1;
-        map<int, int> mp;
-        mp[0] = -1;
+        ll preSum = 0;
+        int ans = 0;
+        map<ll, ll> mp;
+        mp[0] = 0;
         for (int i = 0; i < n; i++)
         {
             preSum += a[i];
             if(mp.find(preSum) != mp.end()){
-                int pre = mp[preSum];
-                if(pre>=last){
-                    mx++;
-                    last = i;
-                }
+                ans++;
+                mp.clear();
+                mp[0]= 1;
+                preSum = 0;
             }
-            mp[preSum] = i;
+            mp[preSum] = 1;
         }
-        cout<<mx<<endl;
+        cout<<ans<<endl;
     }
     
 }
