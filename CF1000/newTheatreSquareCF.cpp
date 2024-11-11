@@ -40,10 +40,10 @@ int main() {
         }
         int ans1 = 0,ans2=0;
         
-            ans1+=cnt2*y;
-            ans1+= (cnt1 - cnt2*2) * x;
+        ans1+=cnt2*y;
+        ans1+= (cnt1 - cnt2*2) * x;
         
-         ans2+=cnt1*x;
+        ans2+=cnt1*x;
         cout<<min(ans1,ans2)<<endl;
     }
     
