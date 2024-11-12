@@ -20,8 +20,7 @@ int main() {
       for(int i=0;i<n;i++) cin>>a[i];  
       for(int i=0;i<m;i++) cin>>b[i];
       sort(a.begin(),a.end());
-      sort(b.begin(),b.end());
-      reverse(b.begin(),b.end());
+      sort(b.rbegin(),b.rend());
       ll ans= 0;
       int l=0,r=m-1,i=0,j=n-1;
       while(i<=j){
