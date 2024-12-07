@@ -52,6 +52,30 @@ Node* deleteTail(Node* head){
     return head;
 }
 
+Node* removeK(Node* head, int k){
+    if(head==NULL) return head;
+    if(k==1){
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+    int cnt=0;
+    Node* temp = head;
+    Node* pre = NULL;
+    while(temp){
+        cnt++;
+        if(cnt==k){
+            pre->next= pre->next->next;
+            delete temp;
+            break;
+        }
+        pre = temp;
+        temp = temp->next;
+    }
+    return head;
+}   
+
 void display(Node* head){
     Node* temp  = head;
     while(temp!=nullptr){
@@ -67,6 +91,7 @@ int main() {
     Node* head = convertArray2LL(v);
     head=deleteHead(head);
     deleteTail(head);
+    head = removeK(head, 6);
     display(head);
 
     
