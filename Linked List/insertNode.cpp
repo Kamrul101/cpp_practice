@@ -38,7 +38,38 @@ Node* insertHead(Node* head,int k){
     Node* temp  = new Node(k,head);
     // temp->next = head;
     return temp;
-}  
+}
+Node* insertTail(Node* head, int k){
+    if(head==NULL) return new Node(k);
+    Node* temp = head;
+    while(temp->next!=nullptr){
+        temp = temp->next;
+    }
+    Node* newNode = new Node(k);
+    temp->next = newNode;
+    return head;
+}
+
+Node* insertPos(Node* head, int elem,int k){
+    if(head==NULL){
+        if(k==1) return new Node(elem);
+        else return head;
+    }
+    if(k==1) return new Node(elem,head);
+    int cnt = 0;
+    Node* temp = head;
+    while(temp!=nullptr){
+        cnt++;
+        if(cnt==k-1){
+            Node* newNode = new Node(elem);
+            newNode->next = temp->next;
+            temp->next = newNode;
+            break;
+        }
+        temp=temp->next;
+    }
+    return head;
+}
 
 void display(Node* head){
     Node* temp  = head;
@@ -54,6 +85,8 @@ int main() {
     vector<int> v = {1,2,3,4,5,6};
     Node* head = convertArray2LL(v);
     head = insertHead(head, 100);
+    head = insertTail(head, 100);
+    head = insertPos(head,15,9);
     display(head);
 
     
