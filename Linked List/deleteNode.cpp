@@ -75,6 +75,42 @@ Node* removeK(Node* head, int k){
     }
     return head;
 }   
+Node* removeElem(Node* head, int k){
+    if(head==NULL) return head;
+    if(head->data==k){
+        Node* temp = head;
+            head = head->next;
+            delete temp;
+            return head;
+        }
+        
+        Node* temp = head;
+        Node* pre = NULL;
+        while(temp!=NULL){
+            if(temp->data==k){
+                pre->next= pre->next->next;
+                delete temp;
+                break;
+            }
+            pre = temp;
+            temp = temp->next;
+        }
+        return head;
+}   
+Node* removeAllElem(Node* head, int k){
+        if(head==NULL) return head;
+        Node* pre = new Node(-1,head);
+        Node* temp = pre;
+        while(temp->next!=NULL){
+            if(temp->next->data==k){
+                temp->next = temp->next->next;
+            }
+            else{
+                temp=temp->next;
+            }
+        }
+        return pre->next;
+}   
 
 void display(Node* head){
     Node* temp  = head;
@@ -89,9 +125,10 @@ int main() {
     optimize();
     vector<int> v = {1,2,3,4,5,6};
     Node* head = convertArray2LL(v);
-    head=deleteHead(head);
-    deleteTail(head);
-    head = removeK(head, 6);
+    // head=deleteHead(head);
+    // deleteTail(head);
+    // head = removeK(head, 6);
+    head = removeAllElem(head,3);
     display(head);
 
     
