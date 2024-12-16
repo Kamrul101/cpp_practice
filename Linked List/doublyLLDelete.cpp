@@ -50,6 +50,21 @@ Node* DeleteHead(Node* head){
     
 }
 
+Node* DeleteTail(Node* head){
+    if(head==NULL || head->next==NULL) return NULL;
+    Node* tail = head;
+    while (tail->next!=NULL)
+    {
+        tail=tail->next;
+    }
+    Node* prev = tail->back;
+    tail->back=nullptr;
+    prev->next=nullptr;
+    delete tail;
+    return head;
+    
+}
+
 void display(Node* head){
     Node* temp  = head;
     while(temp!=nullptr){
@@ -63,6 +78,7 @@ int main() {
     vector<int> v = {1,2,3,4};
     Node* head = covertArr2DLL(v);
     head = DeleteHead(head);
+    head = DeleteTail(head);
     display(head);
 
 }
