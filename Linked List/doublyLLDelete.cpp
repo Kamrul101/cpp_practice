@@ -65,6 +65,34 @@ Node* DeleteTail(Node* head){
     
 }
 
+Node* DeleteKthNode(Node* head,int k){
+    if(head==NULL) return NULL;
+    int cnt=0;
+    Node* temp = head;
+    while(temp!=NULL){
+        cnt++;
+        if(cnt==k) break;
+        temp=temp->next;
+    }
+    Node* prev = temp->back;
+    Node* front = temp->next;
+    if(prev==NULL && front==NULL){
+        return NULL;
+    }
+    else if(prev==NULL){
+        return DeleteHead(head);
+    }
+    else if(front==NULL){
+        return DeleteTail(head);
+    }
+    prev->next = front;
+    front->back=prev;
+    temp->next=nullptr;
+    temp->back=nullptr;
+    delete temp;
+    return head;
+}
+
 void display(Node* head){
     Node* temp  = head;
     while(temp!=nullptr){
@@ -77,8 +105,9 @@ int main() {
     optimize();
     vector<int> v = {1,2,3,4};
     Node* head = covertArr2DLL(v);
-    head = DeleteHead(head);
-    head = DeleteTail(head);
+    // head = DeleteHead(head);
+    // head = DeleteTail(head);
+    head = DeleteKthNode(head,4);
     display(head);
 
 }
