@@ -63,6 +63,24 @@ Node* insertBeforeTail(Node* head,int val){
     return head;
 }
 
+Node* insertBeforeKthNode(Node* head,int k,int val){
+    if(k==1) return insertBeforeHead(head,val);
+    int cnt= 0;
+    Node* temp = head;
+    while(temp->next!=NULL){
+        cnt++;
+        if(cnt==k) break;
+        temp=temp->next;
+    }
+    Node* prev =temp->back;
+    Node* newNode = new Node(val);
+    newNode->next=temp;
+    newNode->back=prev;
+    prev->next = newNode;
+    temp->back = newNode;
+    return head;
+}
+
 void display(Node* head){
     Node* temp  = head;
     while(temp!=nullptr){
@@ -77,5 +95,6 @@ int main() {
     Node* head = covertArr2DLL(v);
     head = insertBeforeHead(head,10);
     head = insertBeforeTail(head,10);
+    head = insertBeforeKthNode(head,7,34);
     display(head);
 }
