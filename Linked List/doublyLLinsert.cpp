@@ -37,6 +37,32 @@ Node* covertArr2DLL(vector<int> &v){
     }
     return head;
 }
+
+Node* insertBeforeHead(Node* head,int val){
+    Node* newHead = new Node(val);
+    head->back=newHead;
+    newHead->next=head;
+    newHead->back=nullptr;
+    return newHead;
+}
+
+Node* insertBeforeTail(Node* head,int val){
+    if(head->next==NULL){
+        return insertBeforeHead(head,val);
+    }
+    Node* tail = head;
+    while(tail->next!=NULL){
+        tail=tail->next;
+    }
+    Node* prev = tail->back;
+    Node* newNode = new Node(val);
+    newNode->next=tail;
+    newNode->back=prev;
+    prev->next = newNode;
+    tail->back=newNode;
+    return head;
+}
+
 void display(Node* head){
     Node* temp  = head;
     while(temp!=nullptr){
@@ -49,5 +75,7 @@ int main() {
     optimize();
     vector<int> v = {1,2,3,4};
     Node* head = covertArr2DLL(v);
+    head = insertBeforeHead(head,10);
+    head = insertBeforeTail(head,10);
     display(head);
 }
