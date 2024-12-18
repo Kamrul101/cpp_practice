@@ -14,22 +14,23 @@ int main() {
     int t;
     cin>>t;
     while(t--){
-        int n;
-        cin>>n;
-        vector<ll> v;
-        int m = (n*(n-1))/2;
-        for(int i=0;i<m;i++) {
-            ll x;
-            cin>>x;
-            v.push_back(x);
-        }
-        sort(v.begin(),v.end());
-        ll  ans = v.back();
-        for(int i=0;i<m;i+=n) {
-            cout<<v[i]<<" ";
-            n--;
-        }
-        cout<<ans<<endl;
+        ll n,x,y;
+        cin>>n>>x>>y;
+        ll lcm = (x*y)/__gcd(x,y);
+        ll cnt = n/lcm;
+        ll cntX = n/x;
+        ll cntY = n/y;
+        
+        cntX-= cnt;
+        cntY-= cnt;
+
+        ll sumY = (cntY*(cntY+1))/2;
+        ll sumX = n*(n+1)/2;
+        ll z = n-cntX;
+        sumX-= (z*(z+1))/2;
+        cout<<sumX-sumY<<endl;
+        
+        
     }
     
 }
