@@ -24,7 +24,7 @@ int main() {
     sort(b,b+m);
     int cnt=0,j=0;
     for(int i=0;i<n&&j<m;){
-        if(abs(a[i]-b[i])<=1){
+        if(abs(a[i]-b[j])<=1){
             cnt++;
             i++;
             j++;
