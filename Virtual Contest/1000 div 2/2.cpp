@@ -32,12 +32,13 @@ int main() {
         }
         sort(v1.begin(),v1.end());
         sort(v2.begin(),v2.end());
-        sum1 = accumulate(v1.begin(),v1.begin()+(r-l+1),0LL);
-        sum2 = accumulate(v2.begin(),v2.begin()+(r-l+1),0LL);
-
+        for (int i=0;i<(r - l + 1);i++) {
+            sum1+=v1[i];
+        }
+        for (int i=0;i<(r-l+1);i++) {
+            sum2+=v2[i];
+        }
         cout<<min(sum1,sum2)<<endl;
-        
-        
     }
     
 }
