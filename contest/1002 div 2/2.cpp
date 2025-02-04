@@ -29,20 +29,14 @@ int main() {
             cout<<ans<<endl;
         }
         else {
-            int check = -1;
+            int check = -1,cnt=0;
             for (int i=2;i<=n-k+2;i++) {
-                if(a[i]!=1) {
-                    check=i;
-                    break;
+                if(a[i]==1) {
+                    cnt++;
                 }
             }
-            if(check==-1){
-                int x = 2;
-                for(int i=n-k+1;i<=n;i+=2) {
-                    if (a[i]!=x) break;
-                    x++;
-                }
-                cout<<x<<endl;
+            if(cnt==n-k+1){
+                cout<<2<<endl;
             }
             else cout<<1<<endl;
         }
