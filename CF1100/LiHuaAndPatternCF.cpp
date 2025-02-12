@@ -21,32 +21,23 @@ int main() {
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 cin>>v[i][j];
-                c[i][j]=v[i][j];
             }
         }
-        reverse(c.begin(),c.end());
-        for(int i=0;i<n;i++){
-            reverse(c[i].begin(),c[i].end());
-        }
-        bool ans = true;
         int cnt=0;
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
-                if(v[i][j]!=c[i][j]){
+                if(v[i][j]!=v[n-i-1][n-j-1]){
                     cnt++;
                 }
             }
-            // if(!ans) break;
         }
         cnt/=2;
         if(k<cnt) cout<<"NO"<<endl;
         else{
             k-=cnt;
-            if(n%2 || k%2) cout<<"YES"<<endl;
+            if(n%2 || k%2==0) cout<<"YES"<<endl;
             else cout<<"NO"<<endl;
         }
-
-        
     }
     
 }
