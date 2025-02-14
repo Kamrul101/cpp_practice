@@ -1,25 +1,24 @@
 #include<iostream>
-class Array
-{
-public:
-    int *A;
-    int size;
-    int length;
-
-    Array(){
-        size = 10;
-        length = 10;
-        A = new int(size);
-    }
-    Array(int size){
-        this->size= size;
-        this->length= length;
-        A = new int(size);
-    }
-    ~Array(){
-        delete []A;
-    } 
-    void Display();
+class Array{
+    public:
+        int *A;
+        int size;
+        int length;
+    
+        Array(){
+            size = 10;
+            length = 10;
+            A = new int(size);
+        }
+        Array(int size){
+            this->size= size;
+            this->length= length;
+            A = new int(size);
+        }
+        ~Array(){
+            delete []A;
+        } 
+        void Display();
 };
 
 void Array::Display(){
