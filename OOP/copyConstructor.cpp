@@ -12,8 +12,8 @@ typedef long double ld;
 
 class Student{
     private:
-        string name, sub, dept;
     public:
+        string name, sub, dept;
         //normal parameterized constructor
         Student(string name,string sub,string dept){
             this->name = name;
@@ -24,7 +24,6 @@ class Student{
             copy constructor
             pass by reference of the original
             so this is the main copy of original object
-            any change will affect the main object
         */
         Student(Student &obj){
             cout<<"It's a copy constructor"<<endl;
