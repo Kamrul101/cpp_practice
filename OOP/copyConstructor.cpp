@@ -14,11 +14,18 @@ class Student{
     private:
         string name, sub, dept;
     public:
+        //normal parameterized constructor
         Student(string name,string sub,string dept){
             this->name = name;
             this->sub = sub;
             this->dept=dept;
         }
+        /*
+            copy constructor
+            pass by reference of the original
+            so this is the main copy of original object
+            any change will affect the main object
+        */
         Student(Student &obj){
             cout<<"It's a copy constructor"<<endl;
             this->name = obj.name;
