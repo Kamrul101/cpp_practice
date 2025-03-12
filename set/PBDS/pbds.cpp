@@ -36,6 +36,10 @@ int main() {
 
             // finds values in index
             cout<<*os.find_by_order(x)<<endl;
+            //deletes all occurrences
+            os.erase(x);
+            // to remove only single value in duplicate
+            os.erase(os.find_by_order(os.order_of_key(x)));
         }
     }
     
