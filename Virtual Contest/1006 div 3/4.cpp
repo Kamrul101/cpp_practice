@@ -23,8 +23,8 @@ int main() {
             for(int j=i+1;j<n;j++){
                 if(a[j]>a[i]) cnt1++;
                 if(a[j]<a[i])cnt2++;
-                if(mx>cnt1-cnt2){
-                    mx = cnt1-cnt2;
+                if(mx<cnt2-cnt1){
+                    mx = cnt2-cnt1;
                     l=i+1;
                     r=j+1;
                 }
