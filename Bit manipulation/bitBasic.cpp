@@ -14,6 +14,10 @@ void printBinary(int n){
     for(int i=10;i>=0;i--){
         cout<<((n>>i)&1);
     }
+    // for(int i=10;i>=0;i--){
+    //     if((n&(1<<i))!=0) cout<<1;
+    //     else cout<<0;
+    // }
     cout<<endl;
 }
 int main() {
