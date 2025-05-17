@@ -10,7 +10,7 @@ typedef long double ld;
 // const int mx =2e5+123;
 // int a[mx];
 
-vector<ll> generateLuckyNumbers() {
+vector<ll> generateSuperLuckyNumbers() {
     vector<ll> lucky;
     for (int len = 2; len <= 10; len+=2) {
         int total = 1 << len;
@@ -32,7 +32,7 @@ int main() {
     optimize();
     int n;
     cin>>n;
-    auto a = generateLuckyNumbers();
+    auto a = generateSuperLuckyNumbers();
     for(auto u:a){
         if(u>=n){
             cout<<u<<endl;
