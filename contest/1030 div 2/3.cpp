@@ -22,12 +22,11 @@ int main() {
         for(int i=0;i<n;i++) {
             ll x = a[i];
             cnt += __builtin_popcountll(x);
-            while(1){
-                int zeroBit = __builtin_ctzll(~x);
-                ll req = (1LL<<zeroBit);
-                if(k<req) break;
-                v.push_back(req);
-                x += req;
+            for(int bit=62;bit>=0;bit--){
+                if((x&(1LL<<bit))==0){
+                    ll val = (1LL<<bit);
+                    v.push_back(val);
+                }
             }
         }
         sort(v.begin(),v.end());

@@ -32,6 +32,9 @@ int main() {
         for(int i=1;i<k;i++) s+='1';
         s+='0';
         cout<<s<<endl;
+        // for(int i=1;i<=k;i++) cout<<1;
+        // for(int i=1;i<=n-k;i++) cout<<0;
+        // cout<<endl;
         
     }
     
