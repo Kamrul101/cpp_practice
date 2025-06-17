@@ -45,6 +45,31 @@ int main() {
             }
             if(!ans) cout<<"NO"<<endl;
         }
+        // map<char,int> mp;
+        // for(int i=0;i<n-1;i++){
+        //     mp[s[i]]++;
+        // }
+
+        // for(auto u:mp){
+        //     if(u.second>1) {
+        //         cout<<"YES"<<endl;
+        //         ans =  true;
+        //         break;
+        //     }
+        // }
+        // if(!ans){
+        //     mp[s[n-1]]--;
+        //     mp[s[0]]++;
+        //     for(auto u:mp){
+        //         if(u.second>1) {
+        //             cout<<"YES"<<endl;
+        //             ans =  true;
+        //             break;
+        //         }
+        //     }
+        //     if(!ans) cout<<"NO"<<endl;
+        // }
+
         
     }
     
