@@ -18,31 +18,22 @@ int dist[mx];
 bool bellman(int src, int n, int m){
     for(int i=0;i<=n;i++) dist[i] = inf;
     dist[src] = 0;
-    for(int i=1;i<n;i++){
+    int x = -1;
+    for(int i=1;i<=n;i++){
         for(auto e:edges){
             int u = e[0];
             int v = e[1];
             int w = e[2];
-
             if(dist[u]!=inf && dist[u]+w<dist[v]){
                 dist[v] = dist[u]+w;
+                if(i==n){
+                    x = v;
+                    break;
+                }
             }
         }
     }
-    
-    //check for negative cycle
-    bool cycle = false;
-    
-    for(auto e:edges){
-        int u = e[0];
-        int v = e[1];
-        int w = e[2];
-        if(dist[u]!=inf && dist[u]+w<dist[v]){
-            cycle=true;
-            break;
-        }
-    }
-    return cycle;
+    return (x!=-1);
 }
 
 int main() {
@@ -59,8 +50,9 @@ int main() {
             edges.push_back({x,y,w});
         }
         bool check = bellman(0,n,m);
-        if(check) cout<<"possible"<<endl;
-        else cout<<"not possible"<<endl;
+        if(check) cout<<"Has Negative Cycle"<<endl;
+        else cout<<"No Negative Cycle"<<endl;
+
     }
     
 }
