@@ -12,12 +12,12 @@ const ll infLL = 9000000000000000000;
 const int mx =1e5+123;
 
 
-vector<array<int,3>> edges;
-int dist[mx];
-int x = -1;
-
-bool bellman(int src, int n, int m){
-    for(int i=0;i<=n;i++) dist[i] = inf;
+vector<array<ll,3>> edges;
+ll dist[mx];
+ll par[mx];
+ll x = -1;
+bool bellman(ll src, ll n, ll m){
+    for(int i=1;i<=n;i++) dist[i] = infLL;
     dist[src] = 0;
     for(int i=1;i<=n;i++){
         for(auto e:edges){
@@ -26,24 +26,41 @@ bool bellman(int src, int n, int m){
             int w = e[2];
             if(dist[u]+w<dist[v]){
                 dist[v] = dist[u]+w;
+                par[v] = u;
                 if(i==n) x = v;
             }
         }
     }
     return (x!=-1);
+ 
 }
+
 
 int main() {
     optimize();
-    int n,m;
+    ll n,m;
     cin>>n>>m;
     for(int i=0;i<m;i++){
-        int x,y,w;
+        ll x,y,w;
         cin>>x>>y>>w;
         edges.push_back({x,y,w});
     }
-    bool check = bellman(0,n,m);
-    if(check) cout<<"Has Negative Cycle"<<endl;
-    else cout<<"No Negative Cycle"<<endl;
+    bool check = bellman(1,n,m);
+    if(check){
+        for(int i=0;i<n;i++) x = par[x];
+        vector<ll> path;
+        ll dest = x;
+        while(1){
+            path.push_back(dest);
+            dest = par[dest];
+            if(dest==x) break;
+        }
+        path.push_back(dest);
+        reverse(path.begin(),path.end());
+        cout<<"YES"<<endl;
+        for(auto u:path) cout<<u<<" ";
+ 
+    }
+    else cout<<"NO"<<endl;
     
 }
