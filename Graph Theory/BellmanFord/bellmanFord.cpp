@@ -38,21 +38,17 @@ bool bellman(int src, int n, int m){
 
 int main() {
     optimize();
-    int t;
-    cin>>t;
-    while(t--){
-        int n,m;
-        cin>>n>>m;
-        edges.clear();
-        for(int i=0;i<m;i++){
-            int x,y,w;
-            cin>>x>>y>>w;
-            edges.push_back({x,y,w});
-        }
-        bool check = bellman(0,n,m);
-        if(check) cout<<"Has Negative Cycle"<<endl;
-        else cout<<"No Negative Cycle"<<endl;
-
+    int n,m;
+    cin>>n>>m;
+    edges.clear();
+    for(int i=0;i<m;i++){
+        int x,y,w;
+        cin>>x>>y>>w;
+        edges.push_back({x,y,w});
     }
+    bool check = bellman(0,n,m);
+    if(check) cout<<"Has Negative Cycle"<<endl;
+    else cout<<"No Negative Cycle"<<endl;
+
     
 }
