@@ -7,43 +7,64 @@ typedef long double ld;
 #define endl "\n"
 #define MOD 1000000007
 #define mem(a,b) memset(a, b, sizeof(a) )
-const int mx =203;
-int a[mx][mx];
-int main() {
-    optimize();
-    int t;
-    cin>>t;
-    while(t--){
-        int n,m,k;
-        cin>>n>>m>>k;
+// const int mx =2e5+123;
+// int a[mx];
 
-        for (int i=0;i<n;i++) {
-            for (int j=0;j<m;j++) {
-                cin>>a[i][j];
-            }
-        }
-        int ans=-1;
-        for(int i=0;i<n;i++){
-            if(a[i][0]<=k && k<=a[i][m-1]){
-                int l=0,h=m-1;
-                bool check = false;
-                while(l<=h){
-                    int mid = (l+h)/2;
-                    if(a[i][mid]==k){
-                        ans = a[i][mid];
-                        check = true;
-                        break;
+    vector<string> convert(string s, int rows) {
+        vector<string> v;
+        int n = s.size(), wordCnt = 0;
+        string result;
+        for (int i = 0; i < n;) {
+            wordCnt++;
+            string chunk;
+            if(wordCnt%2==0){ 
+                chunk+=' '; 
+                chunk += s.substr(i, rows-2);
+                chunk+=' ';
+                if(chunk.size()<rows){
+                    for(int i=chunk.size();i<rows;i++){
+                        chunk+=' ';
                     }
-                    else if(k>a[i][mid]){
-                        l = mid + 1;
-                    }
-                    else h= mid -1;
                 }
-                if(check) break;
+                reverse(chunk.begin(),chunk.end());
+                i+=rows-2;
+            }
+            else{
+                chunk = s.substr(i, rows);
+                i+=rows;
+            } 
+            result += chunk;
+            v.push_back(chunk);
+        }
+        n = v.size();
+        string temp = v.back();
+        if(temp.size()!=rows){
+            for(int i=temp.size();i<rows;i++){
+                temp+=' ';
             }
         }
-        cout<<ans<<endl;
+        v.pop_back();
+        v.push_back(temp);
+        // int j=0;
+        // temp.clear();
+        // while(j<rows){
+        //     for(auto u:v){
+        //         if(u[j]!=' ') temp+=u[j];
+        //     }
+        //     j++;
+
+        // }
+        return v;
         
     }
+int main() {
+    optimize();
+    string s;
+    cin>>s;
+    vector<string> ans = convert(s,4);
+    for(auto u:ans){
+        cout<<u<<endl;
+    }
+    // cout<<ans.back().size()<<endl;
     
 }
