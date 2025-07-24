@@ -17,7 +17,7 @@ int main() {
         ll a,b,k;
         cin>>a>>b>>k;
 
-        int g = __gcd(a,b);
+        ll g = __gcd(a,b);
         if(a/g<=k && b/g<=k) cout<<1<<endl;
         else cout<<2<<endl;
     }
