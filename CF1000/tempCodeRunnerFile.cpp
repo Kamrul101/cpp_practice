@@ -1,1 +1,0 @@
-cout<<cntA<<" "<<cntB<<endl;
