@@ -13,10 +13,6 @@ int lev[mx];
 vector<int> adjMat[mx];
 int respect[mx];
 
-void bfs(int s){
-    
-    
-}
 
 int main() {
     optimize();
