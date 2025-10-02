@@ -25,20 +25,21 @@ ll cost(vector<int> &v,string s, char c){
     }
     return ans;
 }
-
-// ll cost(vector<int> &v){
-//     if(v.size()==0) return 0;
-//     int m = v.size();
-//     ll cnt = 0;
-//     for(int i=0;i<m;i++){
-//         v[i]-=i;
-//     }
-//     for(int i=0;i<m;i++){
-//         ll x = abs(v[m/2]-v[i]);
-//         cnt+=x;
-//     }
-//     return cnt;
-// }
+/*
+ll cost(vector<int> &v){
+    if(v.size()==0) return 0;
+    int m = v.size();
+    ll cnt = 0;
+    for(int i=0;i<m;i++){
+        v[i]-=i;
+    }
+    for(int i=0;i<m;i++){
+        ll x = abs(v[m/2]-v[i]);
+        cnt+=x;
+    }
+    return cnt;
+}
+*/
 
 int main() {
     optimize();
