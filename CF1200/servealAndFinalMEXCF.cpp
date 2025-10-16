@@ -16,14 +16,11 @@ int main() {
     while(t--){
         int n;
         cin>>n;
-        int zero = -1,cnt0=0, first0=-1,last0=-1;
-        for(int i=1;i<n;i++) {
+        int zero = -1;
+        for(int i=1;i<=n;i++) {
             cin>>a[i];
             if(a[i]==0){ 
                 zero = i;
-                cnt0++;
-                if(first0==-1) first0=i;
-                last0=i;
             }
         }
         if(zero==-1){
@@ -49,13 +46,11 @@ int main() {
         }
         else if(check1 && !check2){
             vp.push_back({x+1,n});
-            vp.push_back({1,n-x+1});
-            vp.push_back({1,2});
+            vp.push_back({1,x+1});
         }
         else{
             vp.push_back({1,x});
             vp.push_back({1,n-x+1});
-            vp.push_back({1,2});
         }
         cout<<vp.size()<<endl;
         for(auto u:vp){
