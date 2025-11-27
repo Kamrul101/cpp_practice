@@ -16,25 +16,25 @@ int main() {
     while(t--){
         int n,x,y;
         cin>>n>>x>>y;
-        vector<int>v(n,-1);
+        vector<int>v(n,1);
         x--;
         y--;
-        for(int i=y;i<=x;i++) v[i] = 1;
+        
         bool c=true;
-        for(int i=0;i<y;i++){
+        for(int i=x+1;i<n;i++){
             if(c) {
-                v[i] = 1;
-                c= false;
+                v[i] = -1;
+                c = false;
             }
             else c = true;
         }
         c = true;
-        for(int i=x+1;i<n;i++){
-            if(!c) {
-                v[i] = 1;
-                c = true;
+        for(int i=y-1;i>=0;i--){
+            if(c) {
+                v[i] = -1;
+                c = false;
             }
-            else c = false;
+            else c = true;
         }
         for(int i=0;i<n;i++) cout<<v[i]<<" \n"[i+1==n];
         
